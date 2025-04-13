@@ -189,8 +189,10 @@ _________________________
   
   Authorization: Not required
   
-  Example: http://localhost:8080/api/book/bytitle?title=secret
-           http://localhost:8080/api/book/bytitle?title=SecretOfLife
+  Example: 
+  http://localhost:8080/api/book/bytitle?title=secret
+ 
+  http://localhost:8080/api/book/bytitle?title=SecretOfLife
 
 
 
@@ -202,8 +204,10 @@ _________________________
   
   Authorization: Not required
   
-  Example: http://localhost:8080/api/book/byauthor?author=Nikolaou
-           http://localhost:8080/api/book/byauthor?author=ioann
+  Example: 
+  http://localhost:8080/api/book/byauthor?author=Nikolaou
+  
+  http://localhost:8080/api/book/byauthor?author=ioann
 
 
 
@@ -225,8 +229,10 @@ _________________________
  
  Authorization: Requires Admin's Bearer Token
  
- Example: http://localhost:8080/api/book/update/1234?title=life&author=ioannou
-          http://localhost:8080/api/book/update/1234456789?title=life&author=ioannou
+ Example:
+ http://localhost:8080/api/book/update/1234?title=life&author=ioannou
+         
+ http://localhost:8080/api/book/update/1234456789?title=life&author=ioannou
 
 
 
@@ -238,8 +244,10 @@ _________________________
   
   Authorization: Requires Admin's Bearer Token
   
-  Example: http://localhost:8080/api/book/update/title/1234?title=TheMeaningOfLife
-           http://localhost:8080/api/book/update/title/1234456789?title=life
+  Example:
+  http://localhost:8080/api/book/update/title/1234?title=TheMeaningOfLife
+  
+  http://localhost:8080/api/book/update/title/1234456789?title=life
 
 
 
@@ -251,8 +259,10 @@ _________________________
   
   Authorization: Requires Admin's Bearer Token
   
-  Example: http://localhost:8080/api/book/update/author/1234?author=argiriou
-           http://localhost:8080/api/book/update/author/1234456789?author=life
+  Example: 
+  http://localhost:8080/api/book/update/author/1234?author=argiriou
+           
+  http://localhost:8080/api/book/update/author/1234456789?author=life
 
 --->Delete Book by ISBN.
 
@@ -262,8 +272,10 @@ _________________________
   
   Authorization: Requires Admin's Bearer Token
   
-  Example: http://localhost:8080/api/book/8989
-           http://localhost:8080/api/book/12348989
+  Example: 
+  http://localhost:8080/api/book/8989
+           
+  http://localhost:8080/api/book/12348989
 
 
  3)BorrowingController
@@ -280,8 +292,10 @@ _________________________
   
   Authorization: Not required
   
-  Example: http://localhost:8080/api/borrowing/1234?username=thanos35
-           http://localhost:8080/api/borrowing/190976?username=thanos35
+  Example: 
+  http://localhost:8080/api/borrowing/1234?username=thanos35
+  
+  http://localhost:8080/api/borrowing/190976?username=thanos35
 
 
 --->Return a book.
@@ -292,8 +306,10 @@ _________________________
   
   Authorization: Not required
   
-  Example: http://localhost:8080/api/borrowing/return/1234?username=thanos35
-           http://localhost:8080/api/borrowing/return/784512?username=thanos35
+  Example: 
+  http://localhost:8080/api/borrowing/return/1234?username=thanos35
+  
+  http://localhost:8080/api/borrowing/return/784512?username=thanos35
 
 ------------------------- 
 
