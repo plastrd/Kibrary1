@@ -38,8 +38,9 @@ _________________________
 
 3. Library_User Table (Stores users' personal data)
    Primary Key: borrowing_id.
-   Includes foreign keys: 1) isbn references the Book Table
-                          2) username  references the Library_User Table
+   Includes foreign keys:
+    1) isbn references the Book Table
+    2) username  references the Library_User Table
 
 -------------------------
 
