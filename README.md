@@ -19,7 +19,7 @@
  CAUTION
  
  Because system retains all borrowing records, Admin can remove a book from them database, only when
- the book has never been borrowed. In other words a book can be removed only if its isbn_key is not referenced as
+ the book has never been borrowed. In other words, book can be removed only if its isbn_key is not referenced as
  a foreign key in the borrowing table.
 
 _________________________
@@ -29,22 +29,28 @@ _________________________
  The application uses PostgreSQL as its database system and includes the following three tables:
 
 1. Book Table (Stores book records)
+   
    Primary Key: isbn (each book has a unique ISBN).
+   
    All columns are NOT NULL – every field is required.
 
-2. Borrowing Table (Stores all the data related to book borrowings)
+3. Borrowing Table (Stores all the data related to book borrowings)
+   
    Primary Key: username (each user has a unique username).
+   
    All columns are NOT NULL– every field is required.
 
-3. Library_User Table (Stores users' personal data)
+5. Library_User Table (Stores users' personal data)
+   
    Primary Key: borrowing_id.
+   
    Includes foreign keys:
     1) isbn references the Book Table
     2) username  references the Library_User Table
 
 -------------------------
 
- The main part of the program contains 4 main packages, a main application file,
+ The main part of the program contains 4 main packages, main application file,
  and the application.properties configuration file.
 
  Packages:
