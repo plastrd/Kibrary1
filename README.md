@@ -62,10 +62,11 @@ _________________________
   Contains the controllers: BookController, BorrowingController, UserController.
   Controllers handle incoming HTTP requests (URLs) and call the appropriate service to perform the requested operations.
 
+
  Available request:
 
  1)UserController
-
+-------------------
 -->LibraryUser Registration.
 
   Method: POST
@@ -75,6 +76,7 @@ _________________________
   Authorization: Not required
   
   Request Body Examples:
+  
   For User:
   {
     "name":"Thanasis",
@@ -83,6 +85,7 @@ _________________________
     "password":"3443",
     "role":1
   }
+  
   For Admin:
   {
     "name":"Nikoleta",
@@ -107,10 +110,12 @@ _________________________
     "username":"thanos35",
     "password":"3443"
   }
+  
   {
     "username":"admin1",
     "password":"8888"
   }
+  
   {
     "username":"than",
     "password":"3090"
@@ -134,16 +139,19 @@ _________________________
    "title":"SecretOfLife",
    "author":"papanikolas"
  }
+ 
  {
    "isbn":"8989",
    "title":"Computer",
    "author":"papadopoulos"
  }
+ 
  {
    "isbn":"98909",
    "title":"SecretOfLife", 
    "author":"Nikolaou"
  }
+ 
  {
    "isbn":"89876",
    "title":"Fire",
