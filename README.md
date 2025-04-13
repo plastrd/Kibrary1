@@ -178,8 +178,11 @@ _________________________
 --->Returns all books that match the given title.
 
   Method: GET
+  
   URL: http://localhost:8080/api/book/bytitle?title=...
+  
   Authorization: Not required
+  
   Example: http://localhost:8080/api/book/bytitle?title=secret
            http://localhost:8080/api/book/bytitle?title=SecretOfLife
 
