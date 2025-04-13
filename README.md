@@ -121,10 +121,9 @@ _________________________
     "password":"3090"
  }
 
-
-
-2) BookController
+ 2)BookController
 -------------------
+
 
 -->Add new book in database.
 
@@ -245,8 +244,8 @@ _________________________
            http://localhost:8080/api/book/12348989
 
 
- 3) BorrowingController
-------------------------
+ 3)BorrowingController
+-------------------
 
 
 -->Borrow a Book.
