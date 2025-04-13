@@ -162,6 +162,7 @@ _________________________
  }
 
 
+
 -->Returns all books from database.
 
   Method: GET
@@ -171,6 +172,7 @@ _________________________
   Authorization: Requires Admin's Bearer Token
   
 
+
 -->Returns all books that match the given title.
 
   Method: GET
@@ -178,6 +180,7 @@ _________________________
   Authorization: Not required
   Example: http://localhost:8080/api/book/bytitle?title=secret
            http://localhost:8080/api/book/bytitle?title=SecretOfLife
+
 
 
 -->Returns all books that match the given author.
@@ -192,6 +195,7 @@ _________________________
            http://localhost:8080/api/book/byauthor?author=ioann
 
 
+
 -->Returns all available books for borrowing.
 
   Method: GET
@@ -199,6 +203,7 @@ _________________________
   URL: http://localhost:8080/api/book/available
   
   Authorization: Not required
+
   
 
 -->Update Book Details (title,author) by ISBN.
@@ -213,6 +218,7 @@ _________________________
           http://localhost:8080/api/book/update/1234456789?title=life&author=ioannou
 
 
+
 -->Update Book Title by ISBN.
 
   Method: PATCH
@@ -223,6 +229,8 @@ _________________________
   
   Example: http://localhost:8080/api/book/update/title/1234?title=TheMeaningOfLife
            http://localhost:8080/api/book/update/title/1234456789?title=life
+
+
 
 -->Update Book Author by ISBN.
 
@@ -263,6 +271,7 @@ _________________________
   
   Example: http://localhost:8080/api/borrowing/1234?username=thanos35
            http://localhost:8080/api/borrowing/190976?username=thanos35
+
 
 -->Return a book.
 
