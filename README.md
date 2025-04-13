@@ -309,13 +309,17 @@ Tokens are simple strings (not real JWTs) and are used to identify if the user h
   Only Admin users can perform the following actions:
 
   Add a new book
+  
   Update an existing book
+  
   Delete a book
+  
   Get all books
 
  All other endpoints, are available to both Admins and regular Users.
 
   More ideas:
+  
   Generate unique tokens on login.
   On every successful login, the system could generate a unique personal token per user and save it.
   This token would then be required in authorized requests.
