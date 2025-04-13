@@ -124,6 +124,7 @@ _________________________
 
 
  2) BookController
+-------------------
 
 -->Add new book in database.
 
@@ -245,6 +246,7 @@ _________________________
 
 
  3) BorrowingController
+---------------------
 
 -->Borrow a Book.
 
