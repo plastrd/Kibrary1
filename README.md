@@ -67,6 +67,7 @@ _________________________
  1)UserController
 
 ->LibraryUser Registration.
+
   Method: POST
   URL: http://localhost:8080/api/user/registration
   Authorization: Not required
@@ -89,6 +90,7 @@ _________________________
   }
 
 ->Login
+
   Authenticates a user and returns a Bearer Token if the credentials are valid.
   Method: POST
   URL: http://localhost:8080/api/user/login
@@ -112,6 +114,7 @@ _________________________
  2) BookController
 
 ->Add new book in database.
+
  Method: POST
  URL: http://localhost:8080/api/book
  Authorization: Requires Admin's Bearer Token
@@ -138,11 +141,13 @@ _________________________
  }
 
 ->Returns all books from database.
+
   Method: GET
   URL: http://localhost:8080/api/book/all
   Authorization: Requires Admin's Bearer Token
 
 ->Returns all books that match the given title.
+
   Method: GET
   URL: http://localhost:8080/api/book/bytitle?title=...
   Authorization: Not required
@@ -150,6 +155,7 @@ _________________________
            http://localhost:8080/api/book/bytitle?title=SecretOfLife
 
 ->Returns all books that match the given author.
+
   Method: GET
   URL: http://localhost:8080/api/book/byauthor?author=...
   Authorization: Not required
@@ -157,11 +163,13 @@ _________________________
            http://localhost:8080/api/book/byauthor?author=ioann
 
 ->Returns all available books for borrowing.
+
   Method: GET
   URL: http://localhost:8080/api/book/available
   Authorization: Not required
 
 ->Update Book Details (title,author) by ISBN.
+
  Method: PATCH
  URL: http://localhost:8080/api/book/update/{isbn}?title=....&author=....
  Authorization: Requires Admin's Bearer Token
@@ -169,6 +177,7 @@ _________________________
           http://localhost:8080/api/book/update/1234456789?title=life&author=ioannou
 
 ->Update Book Title by ISBN.
+
   Method: PATCH
   URL: http://localhost:8080/api/book/update/title/{isbn}?title=....
   Authorization: Requires Admin's Bearer Token
@@ -176,6 +185,7 @@ _________________________
            http://localhost:8080/api/book/update/title/1234456789?title=life
 
 ->Update Book Author by ISBN.
+
   Method: PATCH
   URL: http://localhost:8080/api/book/update/author/{isbn}?author=....
   Authorization: Requires Admin's Bearer Token
@@ -183,6 +193,7 @@ _________________________
            http://localhost:8080/api/book/update/author/1234456789?author=life
 
 ->Delete Book by ISBN.
+
   Method: DELETE
   URL: http://localhost:8080/api/book/{isbn}
   Authorization: Requires Admin's Bearer Token
@@ -192,7 +203,8 @@ _________________________
 
  3) BorrowingController
 
-->Borrow a Book
+->Borrow a Book.
+
   Creates a new record in the borrowing table, indicating that a user has borrowed a book with the given ISBN.
   Method: POST
   URL: http://localhost:8080/api/borrowing/{isbn}?username=...
@@ -200,7 +212,8 @@ _________________________
   Example: http://localhost:8080/api/borrowing/1234?username=thanos35
            http://localhost:8080/api/borrowing/190976?username=thanos35
 
-->Return a book
+->Return a book.
+
   Method: PATCH
   URL: http://localhost:8080/api/borrowing/return/{isbn}?username=...
   Authorization: Not required
@@ -217,6 +230,7 @@ This token must be included in the request when accessing endpoints that require
 Tokens are simple strings (not real JWTs) and are used to identify if the user has the right permissions.
 
 ->Endpoints That Require Authorization
+
   Only Admin users can perform the following actions:
 
   Add a new book
