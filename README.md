@@ -3,17 +3,20 @@
 
  The Kibrary application handles Rest Api requests and manages the underlying database.
 
- IDEA 
+ IDEA
+ 
  Each book in the system, has a unique ISBN and can be borrowed by only one user at a time (total copies = 1).
  Book becomes available for rent again, only after the previous user return it.
 
  Borrowing Logic
+ 
  When a user rent a book, a new record is created in the database and when he return it , the BorrowingState (variable)
  is set to 0 (indicating that the borrowing has been completed).
  However, the borrowing_record is not deleted, still remains in database like user's history. For example,
  this allows us, to track how many times a user has borrowed books or which specific books they borrowed.
 
  CAUTION
+ 
  Because system retains all borrowing records, Admin can remove a book from them database, only when
  the book has never been borrowed. In other words a book can be removed only if its isbn_key is not referenced as
  a foreign key in the borrowing table.
@@ -21,6 +24,7 @@
 _________________________
 
  DATABASE
+ 
  The application uses PostgreSQL as its database system and includes the following three tables:
 
 1. Book Table (Stores book records)
@@ -41,6 +45,7 @@ _________________________
  and the application.properties configuration file.
 
  Packages:
+ 
  1.Model
   Contains the core classes of the system: Book, Borrowing, LibraryUser and Login class.
   These classes represent the main entities of the application.
