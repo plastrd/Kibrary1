@@ -8,7 +8,7 @@
  Each book in the system, has a unique ISBN and can be borrowed by only one user at a time (total copies = 1).
  Book becomes available for rent again, only after the previous user return it.
 
- Borrowing Logic
+ BORROWING LOGIC
  
  When a user rent a book, a new record is created in the database and when he return it , the BorrowingState (variable)
  is set to 0 (indicating that the borrowing has been completed).
@@ -66,11 +66,14 @@ _________________________
 
  1)UserController
 
-->LibraryUser Registration.
+-->LibraryUser Registration.
 
   Method: POST
+  
   URL: http://localhost:8080/api/user/registration
+  
   Authorization: Not required
+  
   Request Body Examples:
   For User:
   {
@@ -89,12 +92,16 @@ _________________________
     "role": 0
   }
 
-->Login
+-->Login
 
   Authenticates a user and returns a Bearer Token if the credentials are valid.
+  
   Method: POST
+  
   URL: http://localhost:8080/api/user/login
-  Authorization: Not required 
+  
+  Authorization: Not required
+  
   Request Body Examples:
   {
     "username":"thanos35",
@@ -113,11 +120,14 @@ _________________________
 
  2) BookController
 
-->Add new book in database.
+-->Add new book in database.
 
  Method: POST
+ 
  URL: http://localhost:8080/api/book
+ 
  Authorization: Requires Admin's Bearer Token
+ 
  Request Body Example:
  {
    "isbn":"1234",
@@ -140,13 +150,17 @@ _________________________
    "author":"Nikolaou"
  }
 
-->Returns all books from database.
+
+-->Returns all books from database.
 
   Method: GET
+  
   URL: http://localhost:8080/api/book/all
+  
   Authorization: Requires Admin's Bearer Token
+  
 
-->Returns all books that match the given title.
+-->Returns all books that match the given title.
 
   Method: GET
   URL: http://localhost:8080/api/book/bytitle?title=...
@@ -154,69 +168,97 @@ _________________________
   Example: http://localhost:8080/api/book/bytitle?title=secret
            http://localhost:8080/api/book/bytitle?title=SecretOfLife
 
-->Returns all books that match the given author.
+
+-->Returns all books that match the given author.
 
   Method: GET
+  
   URL: http://localhost:8080/api/book/byauthor?author=...
+  
   Authorization: Not required
+  
   Example: http://localhost:8080/api/book/byauthor?author=Nikolaou
            http://localhost:8080/api/book/byauthor?author=ioann
 
-->Returns all available books for borrowing.
+
+-->Returns all available books for borrowing.
 
   Method: GET
+  
   URL: http://localhost:8080/api/book/available
+  
   Authorization: Not required
+  
 
-->Update Book Details (title,author) by ISBN.
+-->Update Book Details (title,author) by ISBN.
 
  Method: PATCH
+ 
  URL: http://localhost:8080/api/book/update/{isbn}?title=....&author=....
+ 
  Authorization: Requires Admin's Bearer Token
+ 
  Example: http://localhost:8080/api/book/update/1234?title=life&author=ioannou
           http://localhost:8080/api/book/update/1234456789?title=life&author=ioannou
 
-->Update Book Title by ISBN.
+
+-->Update Book Title by ISBN.
 
   Method: PATCH
+  
   URL: http://localhost:8080/api/book/update/title/{isbn}?title=....
+  
   Authorization: Requires Admin's Bearer Token
+  
   Example: http://localhost:8080/api/book/update/title/1234?title=TheMeaningOfLife
            http://localhost:8080/api/book/update/title/1234456789?title=life
 
-->Update Book Author by ISBN.
+-->Update Book Author by ISBN.
 
   Method: PATCH
+  
   URL: http://localhost:8080/api/book/update/author/{isbn}?author=....
+  
   Authorization: Requires Admin's Bearer Token
+  
   Example: http://localhost:8080/api/book/update/author/1234?author=argiriou
            http://localhost:8080/api/book/update/author/1234456789?author=life
 
-->Delete Book by ISBN.
+-->Delete Book by ISBN.
 
   Method: DELETE
+  
   URL: http://localhost:8080/api/book/{isbn}
+  
   Authorization: Requires Admin's Bearer Token
+  
   Example: http://localhost:8080/api/book/8989
            http://localhost:8080/api/book/12348989
 
 
  3) BorrowingController
 
-->Borrow a Book.
+-->Borrow a Book.
 
   Creates a new record in the borrowing table, indicating that a user has borrowed a book with the given ISBN.
+  
   Method: POST
+  
   URL: http://localhost:8080/api/borrowing/{isbn}?username=...
+  
   Authorization: Not required
+  
   Example: http://localhost:8080/api/borrowing/1234?username=thanos35
            http://localhost:8080/api/borrowing/190976?username=thanos35
 
-->Return a book.
+-->Return a book.
 
   Method: PATCH
+  
   URL: http://localhost:8080/api/borrowing/return/{isbn}?username=...
+  
   Authorization: Not required
+  
   Example: http://localhost:8080/api/borrowing/return/1234?username=thanos35
            http://localhost:8080/api/borrowing/return/784512?username=thanos35
 
@@ -229,7 +271,7 @@ When the user login succesfully, system returns a role-based token.
 This token must be included in the request when accessing endpoints that require authorization.
 Tokens are simple strings (not real JWTs) and are used to identify if the user has the right permissions.
 
-->Endpoints That Require Authorization
+-->Endpoints That Require Authorization
 
   Only Admin users can perform the following actions:
 
