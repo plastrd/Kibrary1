@@ -331,22 +331,27 @@ Tokens are simple strings (not real JWTs) and are used to identify if the user h
  Ideas for Future Improvements
 
  1.Book Copies
+ 
  Currently, each book has only one available copy, so it can only be borrowed by one user at a time.
  A future improvement would be to allow multiple copies per book, so multiple users can borrow the same book
  if there are enough copies.
 
  2.Hide Deleted Books Instead of Removing
+ 
  When the admin deletes a book, instead of removing it from the database, the system can just hide it
  from the available books list.
  This way, the borrowing history has no problem, and the book is just marked as "not available" instead of being deleted.
 
  3.Better JSON Error Handling
+ 
  Currently, if the request body (in add book or user registration) has wrong JSON format, the system shows a 500 Error.
  System has problem, bus it doesn't need restart.
  It would be smarter if the system caught this issue and returned a friendly message.
 
  4.ISBN Validation Improvement
+ 
  Currently, the system does not handle ISBN validation explicitly. 
+ 
  A future improvement could include:
  Ensuring the ISBN is a valid numeric string (only digits).
  If the ISBN contains any non-numeric characters, the system should return an error message.
