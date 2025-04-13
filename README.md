@@ -38,7 +38,8 @@ _________________________
 
 3. Library_User Table (Stores users' personal data)
    Primary Key: borrowing_id.
-   Includes foreign keys: 1) isbn references the Book Table 2) username  references the Library_User Table
+   Includes foreign keys: 1) isbn references the Book Table
+                          2) username  references the Library_User Table
 
 -------------------------
 
@@ -98,7 +99,7 @@ _________________________
     "role": 0
   }
 
--->Login
+--->Login
 
   Authenticates a user and returns a Bearer Token if the credentials are valid.
   
@@ -128,7 +129,7 @@ _________________________
 -------------------
 
 
--->Add new book in database.
+--->Add new book in database.
 
  Method: POST
  
@@ -163,7 +164,7 @@ _________________________
 
 
 
--->Returns all books from database.
+--->Returns all books from database.
 
   Method: GET
   
@@ -173,7 +174,7 @@ _________________________
   
 
 
--->Returns all books that match the given title.
+--->Returns all books that match the given title.
 
   Method: GET
   URL: http://localhost:8080/api/book/bytitle?title=...
@@ -183,7 +184,7 @@ _________________________
 
 
 
--->Returns all books that match the given author.
+--->Returns all books that match the given author.
 
   Method: GET
   
@@ -196,7 +197,7 @@ _________________________
 
 
 
--->Returns all available books for borrowing.
+--->Returns all available books for borrowing.
 
   Method: GET
   
@@ -206,7 +207,7 @@ _________________________
 
   
 
--->Update Book Details (title,author) by ISBN.
+--->Update Book Details (title,author) by ISBN.
 
  Method: PATCH
  
@@ -219,7 +220,7 @@ _________________________
 
 
 
--->Update Book Title by ISBN.
+--->Update Book Title by ISBN.
 
   Method: PATCH
   
@@ -232,7 +233,7 @@ _________________________
 
 
 
--->Update Book Author by ISBN.
+--->Update Book Author by ISBN.
 
   Method: PATCH
   
@@ -243,7 +244,7 @@ _________________________
   Example: http://localhost:8080/api/book/update/author/1234?author=argiriou
            http://localhost:8080/api/book/update/author/1234456789?author=life
 
--->Delete Book by ISBN.
+--->Delete Book by ISBN.
 
   Method: DELETE
   
@@ -259,7 +260,7 @@ _________________________
 -------------------
 
 
--->Borrow a Book.
+--->Borrow a Book.
 
   Creates a new record in the borrowing table, indicating that a user has borrowed a book with the given ISBN.
   
@@ -273,7 +274,7 @@ _________________________
            http://localhost:8080/api/borrowing/190976?username=thanos35
 
 
--->Return a book.
+--->Return a book.
 
   Method: PATCH
   
