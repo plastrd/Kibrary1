@@ -1,5 +1,6 @@
 
- Welcome to Kibrary application.
+  Welcome to Kibrary application.
+-------------------
 
  The Kibrary application handles Rest Api requests and manages the underlying database.
 
@@ -63,7 +64,9 @@ _________________________
   Controllers handle incoming HTTP requests (URLs) and call the appropriate service to perform the requested operations.
 
 
- Available request:
+
+  Available requests:
+-------------------
 
  1)UserController
 -------------------
